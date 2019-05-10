@@ -12,7 +12,7 @@ __url__ = 'https://github.com/aolieman/pyspotlight'
 
 
 import requests
-
+from .config import Config
 
 class SpotlightException(Exception):
     """
@@ -43,7 +43,7 @@ def _post_request(address, payload, filters, headers):
     # faster (spdy/HTTP2 :D) channel.
     if '://' not in address:
         raise SpotlightException('Oops. Looks like you forgot the protocol '
-                                 '(http/https) in your url (%s).' % address)
+                                 '(http/https) in your url ({}).'.format(address))
 
     response = requests.post(address, data=payload, headers=reqheaders)
 
