@@ -1,6 +1,8 @@
 import spotlight
 
-annotations = spotlight.annotate('http://model.dbpedia-spotlight.org/en/annotate',
+l = spotlight.Config()
+
+annotations = spotlight.annotate(l.spotlight_address,
                                 'Germany India country bus',
                                 confidence=0.4, support=20)
 
