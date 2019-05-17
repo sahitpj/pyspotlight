@@ -7,3 +7,5 @@ class Config(object):
 
         self.spotlight_address = "http://model.dbpedia-spotlight.org/en/annotate"
 
+        self.alternate_address = None
+
